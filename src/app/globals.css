@@ -1,26 +1,84 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+JP:wght@400;500;700&display=swap');
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --red: #e8432a;
+  --dark: #1a1a1a;
+  --cream: #f5f0e8;
+  --white: #ffffff;
+  --gray: #6b6b6b;
+  --light-gray: #e8e4dc;
+  --spicy-red: #d63c1e;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: var(--cream);
+  color: var(--dark);
+  overflow-x: hidden;
+}
+
+/* Seigaiha (wave) pattern background */
+.seigaiha-bg {
+  background-color: var(--cream);
+  background-image: radial-gradient(circle at 100% 150%, var(--cream) 24%, #e8e0d0 25%, #e8e0d0 28%, var(--cream) 29%, var(--cream) 36%, #e8e0d0 36%, #e8e0d0 40%, transparent 40%, transparent),
+    radial-gradient(circle at 0 150%, var(--cream) 24%, #e8e0d0 25%, #e8e0d0 28%, var(--cream) 29%, var(--cream) 36%, #e8e0d0 36%, #e8e0d0 40%, transparent 40%, transparent),
+    radial-gradient(circle at 50% 100%, #e8e0d0 10%, var(--cream) 11%, var(--cream) 23%, #e8e0d0 24%, #e8e0d0 30%, var(--cream) 31%, var(--cream) 43%, #e8e0d0 44%, #e8e0d0 50%, var(--cream) 51%, var(--cream) 63%, #e8e0d0 64%, #e8e0d0 71%, transparent 71%, transparent),
+    radial-gradient(circle at 100% 50%, #e8e0d0 5%, var(--cream) 6%, var(--cream) 15%, #e8e0d0 16%, #e8e0d0 20%, var(--cream) 21%, var(--cream) 30%, #e8e0d0 31%, #e8e0d0 35%, var(--cream) 36%, var(--cream) 45%, #e8e0d0 46%, #e8e0d0 49%, transparent 50%, transparent),
+    radial-gradient(circle at 0 50%, #e8e0d0 5%, var(--cream) 6%, var(--cream) 15%, #e8e0d0 16%, #e8e0d0 20%, var(--cream) 21%, var(--cream) 30%, #e8e0d0 31%, #e8e0d0 35%, var(--cream) 36%, var(--cream) 45%, #e8e0d0 46%, #e8e0d0 49%, transparent 50%, transparent);
+  background-size: 100px 50px;
+  z-index: 0;
+}
+
+/* Decorative blob shapes */
+.blob-red {
+  position: fixed;
+  border-radius: 50%;
+  background-color: var(--red);
+  opacity: 0.85;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.blob-top-right {
+  width: 280px;
+  height: 280px;
+  top: -80px;
+  right: -80px;
+}
+
+.blob-bottom-left {
+  width: 320px;
+  height: 320px;
+  bottom: -100px;
+  left: -120px;
+}
+
+/* Seigaiha decorative arcs on blobs */
+.blob-arcs {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.blob-arcs::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background-image:
+    radial-gradient(circle at 50% 50%, transparent 30px, rgba(0,0,0,0.15) 31px, rgba(0,0,0,0.15) 33px, transparent 34px),
+    radial-gradient(circle at 50% 50%, transparent 50px, rgba(0,0,0,0.12) 51px, rgba(0,0,0,0.12) 53px, transparent 54px),
+    radial-gradient(circle at 50% 50%, transparent 70px, rgba(0,0,0,0.10) 71px, rgba(0,0,0,0.10) 73px, transparent 74px);
+  background-size: 80px 40px;
 }
