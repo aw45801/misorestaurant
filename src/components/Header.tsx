@@ -20,11 +20,11 @@ export default function Header() {
           <DirectionsIcon />
           Directions
         </a>
-        <a href="#" className={`${styles.actionBtn} ${styles.actionBtnOutline}`}>
+        <a href="#" className={`${styles.actionBtn} ${styles.actionBtnOutline2}`}>
           <OrderIcon />
           Order Online
         </a>
-        <a href="#" className={`${styles.actionBtn} ${styles.actionBtnFilled}`}>
+        <a href="#" className={`${styles.actionBtn} ${styles.actionBtnOutline3}`}>
           <BookIcon />
           Book
         </a>

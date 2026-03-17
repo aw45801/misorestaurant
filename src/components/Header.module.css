@@ -72,6 +72,28 @@
   color: var(--cream);
 }
 
+.actionBtnOutline2 {
+  background: #ffb006;
+  color: #7a3a00;
+  border: none;
+}
+
+.actionBtnOutline2:hover {
+  background: #da9705;
+  color: #5a2a00;
+}
+
+.actionBtnOutline3 {
+  background: #FFD700;
+  color: #7a3a00;
+  border: none;
+}
+
+.actionBtnOutline3:hover {
+  background: #ccac00;
+  color: #5a2a00;
+}
+
 .actionBtnOutline {
   border-color: var(--red);
   color: var(--red);
